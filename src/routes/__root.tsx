@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Earth connects natural resources — agriculture, energy, minerals, metals, forestry and raw materials — with global markets.",
+          "Earth is a global exchange for produce, energy, minerals, metals, forestry and raw materials, open to producers and buyers anywhere.",
       },
       { name: "author", content: "Earth" },
       { property: "og:title", content: "Earth — From Earth to market" },
       {
         property: "og:description",
-        content: "Global import, export and natural-resource trading.",
+        content: "A global exchange for resources, commodities and produce.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

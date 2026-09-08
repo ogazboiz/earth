@@ -2,8 +2,8 @@ import { Reveal } from "./Reveal";
 
 const pillars = [
   {
-    title: "Source",
-    copy: "We work close to origin — producers, cooperatives, mines and mills — so supply is real before it is offered.",
+    title: "List",
+    copy: "A farm, a mine, a mill or a cooperative lists what it has. If you own a gold mine, you can bring it here.",
   },
   {
     title: "Verify",
@@ -11,11 +11,11 @@ const pillars = [
   },
   {
     title: "Trade",
-    copy: "Contracts, terms and logistics handled end to end, across borders and jurisdictions.",
+    copy: "Buyers and sellers agree terms on the exchange. Contracts and logistics are handled end to end, across borders.",
   },
   {
-    title: "Opportunity",
-    copy: "Buyers gain access to supply they could not reach alone; producers gain access to global demand.",
+    title: "Anywhere",
+    copy: "Someone in the United States uses Earth exactly as someone in Nigeria does. One exchange, open to the world.",
   },
 ];
 
@@ -25,8 +25,8 @@ export function WhyEarth() {
       <Reveal>
         <p className="label text-ink/45">Why Earth</p>
         <h2 className="display mt-6 max-w-[20ch] text-[clamp(2.2rem,5vw,4.2rem)]">
-          Trade in resources rewards those who are close to the source and precise about the
-          paperwork.
+          One exchange for what grows from the earth, what is locked beneath it, and what feeds from
+          it.
         </h2>
       </Reveal>
 

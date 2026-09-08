@@ -9,9 +9,10 @@ import { WhyEarth } from "@/components/earth/WhyEarth";
 import { Vision } from "@/components/earth/Vision";
 import { Closing } from "@/components/earth/Closing";
 
-const title = "Earth — From Earth to market | Global resource sourcing, import & export";
+const title =
+  "Earth — From Earth to market | A global exchange for resources, commodities & produce";
 const description =
-  "Earth sources, buys and moves agricultural produce, energy, minerals, metals, timber and raw materials from origin to the markets that need them.";
+  "Earth is a global exchange for everything that grows from the earth, is locked beneath it, or feeds from it: produce, energy, minerals, metals, timber and raw materials, open to producers and buyers anywhere.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

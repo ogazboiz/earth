@@ -56,7 +56,7 @@ export function Nav() {
                 : "border-paper/40 hover:bg-paper hover:text-ink"
             }`}
           >
-            Explore resources
+            List a resource
           </a>
           <button
             type="button"
@@ -87,7 +87,7 @@ export function Nav() {
               onClick={() => setOpen(false)}
               className="label bg-ink text-paper mt-6 px-5 py-4 text-center"
             >
-              Explore resources
+              List a resource
             </a>
           </div>
         </div>

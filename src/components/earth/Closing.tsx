@@ -8,27 +8,27 @@ export function Closing() {
         <div className="mx-auto max-w-[1500px] px-6 py-24 md:px-10 md:py-36">
           <Reveal>
             <h2 className="display max-w-[16ch] text-[clamp(2.6rem,8vw,7.5rem)]">
-              Sourcing, or selling? Start a conversation.
+              Have a resource? List it. Need one? Find it.
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="border-paper/15 mt-12 flex flex-col gap-8 border-t pt-8 md:flex-row md:items-end md:justify-between">
               <p className="text-paper/65 max-w-[44ch] text-base leading-relaxed">
-                Tell us the product, the volume and the destination. We will come back with what is
-                available, from where, and on what terms.
+                Producers list what they have: the product, the origin and the volume. Buyers tell
+                us what they need and where. Earth brings the two together on the exchange.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="mailto:hello@earth.example"
+                  href="mailto:hello@earth.example?subject=List%20a%20resource%20on%20Earth"
                   className="label bg-paper text-ink hover:bg-gold px-7 py-4 transition-colors"
                 >
-                  Make an enquiry
+                  List a resource
                 </a>
                 <a
-                  href="#resources"
+                  href="mailto:hello@earth.example?subject=Sourcing%20enquiry"
                   className="label border-paper/40 hover:bg-paper/10 border px-7 py-4 transition-colors"
                 >
-                  Browse categories
+                  Make an enquiry
                 </a>
               </div>
             </div>
@@ -41,24 +41,52 @@ export function Closing() {
           <div className="col-span-2 md:col-span-1">
             <Wordmark />
             <p className="text-paper/50 mt-5 max-w-[26ch] text-sm leading-relaxed">
-              From Earth to market. Import, export and global resource sourcing.
+              From Earth to market. A global exchange for resources, commodities and produce.
             </p>
           </div>
           <div>
             <p className="label text-paper/40">Resources</p>
             <ul className="text-paper/70 mt-4 space-y-2 text-sm">
-              <li><a href="#resources" className="hover:text-paper">Agriculture</a></li>
-              <li><a href="#resources" className="hover:text-paper">Energy</a></li>
-              <li><a href="#resources" className="hover:text-paper">Minerals & metals</a></li>
-              <li><a href="#resources" className="hover:text-paper">Forestry</a></li>
+              <li>
+                <a href="#resources" className="hover:text-paper">
+                  Agriculture
+                </a>
+              </li>
+              <li>
+                <a href="#resources" className="hover:text-paper">
+                  Energy
+                </a>
+              </li>
+              <li>
+                <a href="#resources" className="hover:text-paper">
+                  Minerals & metals
+                </a>
+              </li>
+              <li>
+                <a href="#resources" className="hover:text-paper">
+                  Forestry
+                </a>
+              </li>
             </ul>
           </div>
           <div>
             <p className="label text-paper/40">Company</p>
             <ul className="text-paper/70 mt-4 space-y-2 text-sm">
-              <li><a href="#vision" className="hover:text-paper">Vision</a></li>
-              <li><a href="#trade" className="hover:text-paper">How we trade</a></li>
-              <li><a href="#markets" className="hover:text-paper">Markets</a></li>
+              <li>
+                <a href="#vision" className="hover:text-paper">
+                  Vision
+                </a>
+              </li>
+              <li>
+                <a href="#trade" className="hover:text-paper">
+                  How the exchange works
+                </a>
+              </li>
+              <li>
+                <a href="#markets" className="hover:text-paper">
+                  Markets
+                </a>
+              </li>
             </ul>
           </div>
           <div>

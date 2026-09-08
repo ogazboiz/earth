@@ -26,7 +26,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease }}
         >
-          Global sourcing · Import & export
+          A global exchange · Resources, commodities & produce
         </motion.p>
 
         <h1 className="display max-w-[16ch] text-[clamp(3.2rem,10.5vw,10rem)]">
@@ -51,9 +51,9 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.9, ease }}
         >
           <p className="text-paper/80 max-w-[46ch] text-base leading-relaxed md:text-lg">
-            Earth sources, buys and moves products and natural resources — agriculture, energy,
-            minerals, metals and raw materials — from where they are produced to the markets that
-            need them.
+            Earth is an exchange for everything that grows from the earth, is locked beneath it, or
+            feeds from it. Farms, mines, mills and buyers trade on the same terms, whether they are
+            in Lagos or Los Angeles.
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
@@ -64,10 +64,10 @@ export function Hero() {
               Explore resources
             </a>
             <a
-              href="#trade"
+              href="#contact"
               className="label border-paper/40 hover:bg-paper/10 border px-7 py-4 transition-colors"
             >
-              How trade works
+              List a resource
             </a>
           </div>
         </motion.div>
