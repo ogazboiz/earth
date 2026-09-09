@@ -322,7 +322,7 @@
 </section>
 
 <div class="ctl">
-  <button type="button" id="cueBtn" aria-pressed="true">Hide cues</button>
+  <button type="button" id="cueBtn" aria-pressed="false">Show cues</button>
 </div>
 
 <script>
@@ -334,8 +334,8 @@
       btn.textContent = hidden ? 'Show cues' : 'Hide cues';
       btn.setAttribute('aria-pressed', String(!hidden));
     }
-    var hidden = false;
-    try { hidden = localStorage.getItem(key) === '1'; } catch (e) {}
+    var hidden = true;
+    try { hidden = localStorage.getItem(key) !== '0'; } catch (e) {}
     apply(hidden);
     btn.addEventListener('click', function () {
       hidden = !hidden; apply(hidden);
