@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Earth — Pitch</title>
+<meta name="robots" content="noindex" />
+<meta name="description" content="Earth: a global exchange for everything that grows from the earth, is locked beneath it, or feeds from it." />
+<meta property="og:title" content="Earth — From Earth to market" />
+<meta property="og:description" content="A global exchange for resources, commodities and produce." />
+<meta property="og:image" content="/pitch/earth-hero.jpg" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&display=swap" />
+<style>
+  :root {
+    --paper: oklch(0.973 0.007 84);
+    --ink: oklch(0.185 0.008 60);
+    --stone: oklch(0.62 0.012 70);
+    --sand: oklch(0.905 0.021 82);
+    --clay: oklch(0.63 0.075 48);
+    --gold: oklch(0.72 0.105 79);
+    --display: "Instrument Serif", ui-serif, Georgia, serif;
+    --sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+    --pad: clamp(20px, 4vw, 64px);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-snap-type: y proximity; scroll-behavior: smooth; background: var(--ink); }
+  @media (min-width: 900px) { html { scroll-snap-type: y mandatory; } }
+  body {
+    margin: 0; font-family: var(--sans); color: var(--ink); background: var(--paper);
+    -webkit-font-smoothing: antialiased; font-size: clamp(15px, 1.15vw, 19px); line-height: 1.5;
+  }
+  a { color: inherit; }
+  .display { font-family: var(--display); font-weight: 400; letter-spacing: -0.02em; line-height: 0.95; }
+  .label { font-size: 0.6875rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; }
+  .rule { border-top: 1px solid color-mix(in oklab, currentColor 16%, transparent); }
+
+  section.slide {
+    position: relative; min-height: 100svh; scroll-snap-align: start; overflow: hidden;
+    display: grid; grid-template-rows: auto 1fr auto;
+    padding: calc(var(--pad) * 0.75) var(--pad) var(--pad);
+    background: var(--paper); color: var(--ink);
+  }
+  @media (max-width: 899px) { section.slide { padding-bottom: 72px; } }
+  section.slide.dark { background: var(--ink); color: var(--paper); }
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; opacity: .75; }
+  .wordmark { display: inline-flex; align-items: center; gap: 10px; font-size: 1rem; letter-spacing: .34em; text-transform: uppercase; font-weight: 500; text-decoration: none; }
+  .wordmark svg { width: 20px; height: 20px; }
+  .num { font-variant-numeric: tabular-nums; }
+  .body { display: flex; flex-direction: column; justify-content: center; padding: clamp(20px, 3vh, 48px) 0; min-height: 0; }
+  h1, h2 { margin: 0; }
+  h1.display { font-size: clamp(3.4rem, 11vw, 10rem); max-width: 14ch; }
+  h2.display { font-size: clamp(2.4rem, 6.2vw, 5.6rem); max-width: 16ch; }
+  h3.display { font-size: clamp(1.7rem, 3vw, 2.6rem); margin: 0; }
+  p { margin: 0; }
+  .lede { font-size: clamp(1.05rem, 1.5vw, 1.45rem); max-width: 46ch; line-height: 1.45; opacity: .85; }
+  .muted { opacity: .62; }
+  .kicker { margin-bottom: clamp(16px, 2.5vh, 32px); opacity: .55; }
+  .split { display: grid; gap: clamp(20px, 3vw, 56px); align-items: end; }
+  @media (min-width: 900px) { .split { grid-template-columns: 1.2fr 1fr; } }
+  .cols { display: grid; gap: clamp(18px, 2.2vw, 36px); }
+  @media (min-width: 720px) { .cols-3 { grid-template-columns: repeat(3, 1fr); } .cols-4 { grid-template-columns: repeat(4, 1fr); } .cols-2 { grid-template-columns: repeat(2, 1fr); } }
+  .col { padding-top: 16px; }
+  .col .n { display: block; margin-bottom: 10px; opacity: .45; }
+  .col p { margin-top: 8px; font-size: .95rem; opacity: .68; line-height: 1.5; }
+
+  .btn { display: inline-block; padding: 15px 28px; text-decoration: none; transition: background .2s, color .2s; }
+  .btn.solid { background: var(--ink); color: var(--paper); }
+  .dark .btn.solid { background: var(--paper); color: var(--ink); }
+  .btn.solid:hover { background: var(--gold); color: var(--ink); }
+  .btn.ghost { border: 1px solid color-mix(in oklab, currentColor 40%, transparent); }
+  .btn.ghost:hover { background: color-mix(in oklab, currentColor 10%, transparent); }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  /* Cover */
+  section.slide.cover { color: var(--paper); }
+  .cover .bg { position: absolute; inset: 0; z-index: 0; }
+  .cover .bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cover .bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,11,9,.55) 0%, rgba(12,11,9,.2) 40%, rgba(12,11,9,.9) 100%); }
+  .cover > * { position: relative; z-index: 1; }
+
+  /* Category grid */
+  .grid6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  @media (min-width: 720px) { .grid6 { grid-template-columns: repeat(6, 1fr); } }
+  .cat { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--sand); }
+  .cat img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.95); }
+  .cat span { position: absolute; left: 12px; right: 12px; bottom: 12px; color: #fff; font-family: var(--display); font-size: clamp(1.15rem, 1.8vw, 1.7rem); text-shadow: 0 1px 12px rgba(0,0,0,.6); line-height: 1; }
+  .cat small { position: absolute; top: 10px; left: 12px; color: rgba(255,255,255,.75); font-size: .65rem; letter-spacing: .18em; }
+
+  /* Screens */
+  .screens { display: grid; grid-template-columns: 1fr; gap: 16px; align-items: end; }
+  @media (min-width: 900px) { .screens { grid-template-columns: 3fr 1fr; } }
+  .frame { background: var(--ink); padding: 6px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.5); }
+  .dark .frame { background: color-mix(in oklab, var(--paper) 12%, var(--ink)); }
+  .frame img { display: block; width: 100%; height: auto; }
+  .frame.phone { max-width: 220px; border-radius: 22px; padding: 8px; margin: 0 auto; }
+  .frame.phone img { border-radius: 16px; }
+  @media (max-width: 899px) { .frame.desk { display: none; } .frame.phone { max-width: 200px; } }
+
+  /* Quotes */
+  blockquote { margin: 0; font-family: var(--display); font-size: clamp(1.5rem, 2.6vw, 2.4rem); line-height: 1.15; letter-spacing: -0.01em; }
+  blockquote em { color: var(--gold); font-style: italic; }
+  .quotes { display: grid; gap: clamp(20px, 3vw, 48px); }
+  @media (min-width: 900px) { .quotes { grid-template-columns: repeat(3, 1fr); } }
+  .quotes > div { padding-top: 18px; }
+
+  /* Decisions */
+  .decisions { display: grid; gap: 0; }
+  .dec { display: grid; gap: 6px 24px; padding: 14px 0; border-top: 1px solid color-mix(in oklab, currentColor 14%, transparent); }
+  @media (min-width: 900px) { .dec { grid-template-columns: 2.2rem 1fr 1.2fr; align-items: baseline; } }
+  .dec .q { font-family: var(--display); font-size: clamp(1.25rem, 2vw, 1.8rem); line-height: 1.1; }
+  .dec .a { font-size: .95rem; opacity: .72; }
+  .dec .a b { font-weight: 500; opacity: 1; color: var(--gold); }
+
+  /* QR + close */
+  .close { display: grid; gap: 32px; align-items: end; }
+  @media (min-width: 900px) { .close { grid-template-columns: 1fr auto; } }
+  .qr { width: clamp(120px, 18vw, 200px); height: auto; background: #fff; padding: 10px; }
+  .url { font-family: var(--display); font-size: clamp(1.3rem, 2.6vw, 2.4rem); word-break: break-all; text-decoration: none; }
+
+  /* Presenter cue */
+  .cue {
+    margin-top: 12px; padding: 12px 16px; font-size: .9rem; line-height: 1.45;
+    border-left: 3px solid var(--gold); background: color-mix(in oklab, var(--gold) 12%, transparent);
+    max-width: 80ch;
+  }
+  .cue b { font-weight: 500; letter-spacing: .12em; text-transform: uppercase; font-size: .65rem; display: block; margin-bottom: 4px; opacity: .7; }
+  body.hide-cues .cue { display: none; }
+  .foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: .75rem; opacity: .55; }
+
+  /* Controls */
+  .ctl { position: fixed; right: 14px; bottom: 14px; z-index: 20; display: flex; gap: 8px; }
+  .ctl button { font: inherit; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; padding: 9px 12px; border: 1px solid rgba(255,255,255,.35); background: rgba(20,18,16,.72); color: #fff; backdrop-filter: blur(8px); cursor: pointer; }
+  .ctl button:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+
+  @media print {
+    html { scroll-snap-type: none; }
+    section.slide { min-height: auto; height: 100vh; page-break-after: always; break-after: page; }
+    .ctl { display: none; }
+    .cue { display: block !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1 · Cover -->
+<section class="slide cover" id="s1">
+  <div class="bg"><img src="/pitch/earth-hero.jpg" alt="" width="1920" height="1280" /></div>
+  <div class="top">
+    <a class="wordmark" href="/" aria-label="Earth home"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 12h21M12 1.5c3.4 3 3.4 18 0 21M12 1.5c-3.4 3-3.4 18 0 21" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>Earth</a>
+    <span class="label num">01 / 11</span>
+  </div>
+  <div class="body">
+    <p class="label kicker" style="opacity:.8">A global exchange · Resources, commodities &amp; produce</p>
+    <h1 class="display">From Earth to market.</h1>
+    <p class="lede" style="margin-top:28px;color:var(--paper)">Everything that grows from the earth. Everything locked under the earth. Everything that feeds from the earth. We transact it.</p>
+  </div>
+  <div>
+    <div class="cue"><b>Say</b>Good evening Sir. This is Earth, the name you gave it in the voice note. I will show you what changed, then hand you the phone.</div>
+    <div class="foot" style="margin-top:14px"><span>Swipe or scroll for the next slide</span><span>September 2026</span></div>
+  </div>
+</section>
+
+<!-- 2 · The name -->
+<section class="slide dark" id="s2">
+  <div class="top"><span class="label">Where the name comes from</span><span class="label num">02 / 11</span></div>
+  <div class="body">
+    <p class="label kicker">The blessing upon Abraham</p>
+    <h2 class="display">Cattle, silver, gold, precious stones. Not only what grows on the ground. What is locked under it.</h2>
+    <div class="cols cols-3" style="margin-top:clamp(28px,5vh,56px)">
+      <div class="col rule"><span class="label n">01</span><h3 class="display">Grows from the earth</h3><p>Cocoa, cashew, sesame, grains, timber, food.</p></div>
+      <div class="col rule"><span class="label n">02</span><h3 class="display">Locked under the earth</h3><p>Gold, lithium, iron ore, crude oil, gas, copper.</p></div>
+      <div class="col rule"><span class="label n">03</span><h3 class="display">Feeds from the earth</h3><p>Cattle, livestock, everything raised on the land.</p></div>
+    </div>
+  </div>
+  <div class="cue"><b>Say</b>Sir, you told me to think of what the Lord said to Abraham. Cattle, silver, gold, precious stones. Beyond what grows on the ground, there is what is locked under the ground. So the name is Earth. Anything that grows from it, anything locked under it, anything that feeds from it, we transact it.</div>
+</section>
+
+<!-- 3 · What changed -->
+<section class="slide" id="s3">
+  <div class="top"><span class="label">What changed since the last version</span><span class="label num">03 / 11</span></div>
+  <div class="body">
+    <h2 class="display">Farm Connect is gone. This is Earth.</h2>
+    <div class="cols cols-3" style="margin-top:clamp(28px,5vh,56px)">
+      <div class="col rule"><span class="label n">Name</span><h3 class="display">Earth</h3><p>Farm Connect was too small. A farm website cannot hold a gold mine. Earth holds everything.</p></div>
+      <div class="col rule"><span class="label n">Look</span><h3 class="display">No more green</h3><p>Clean, readable on the phone. Earth tones, one serif, real photography of land, mines and fields.</p></div>
+      <div class="col rule"><span class="label n">Meaning</span><h3 class="display">An exchange</h3><p>It no longer speaks like a farm website. It speaks like a place where resources are listed, found and traded.</p></div>
+    </div>
+  </div>
+  <div class="cue"><b>Say</b>You said the UI you saw was only green and you could not read the letters. I removed all of it. Three things changed: the name, the look, and what it says it is.</div>
+</section>
+
+<!-- 4 · What it is -->
+<section class="slide" id="s4">
+  <div class="top"><span class="label">What Earth is</span><span class="label num">04 / 11</span></div>
+  <div class="body">
+    <h2 class="display">An exchange of commodities, valuables and foods.</h2>
+    <p class="lede" style="margin-top:20px">If I have a gold mine, can I come here? Yes. If I have a cocoa farm, a timber concession, a quarry, a cattle ranch, an oil block: yes.</p>
+    <div class="grid6" style="margin-top:clamp(24px,4vh,48px)">
+      <div class="cat"><img src="/pitch/cat-agriculture.jpg" alt="" loading="lazy" /><small class="label">01</small><span>Agriculture</span></div>
+      <div class="cat"><img src="/pitch/cat-energy.jpg" alt="" loading="lazy" /><small class="label">02</small><span>Energy</span></div>
+      <div class="cat"><img src="/pitch/cat-minerals.jpg" alt="" loading="lazy" /><small class="label">03</small><span>Minerals</span></div>
+      <div class="cat"><img src="/pitch/cat-metals.jpg" alt="" loading="lazy" /><small class="label">04</small><span>Metals</span></div>
+      <div class="cat"><img src="/pitch/cat-forestry.jpg" alt="" loading="lazy" /><small class="label">05</small><span>Forestry</span></div>
+      <div class="cat"><img src="/pitch/cat-raw.jpg" alt="" loading="lazy" /><small class="label">06</small><span>Raw materials</span></div>
+    </div>
+  </div>
+  <div class="cue"><b>Say</b>You asked: if I have a gold mine, can I come here? The answer is yes. These are the six categories on the site today. If you want a seventh, tell me and it goes in.</div>
+</section>
+
+<!-- 5 · Anywhere -->
+<section class="slide dark" id="s5">
+  <div class="top"><span class="label">Global by design</span><span class="label num">05 / 11</span></div>
+  <div class="body">
+    <h2 class="display">Somebody in the United States uses Earth the same way somebody in Nigeria does.</h2>
+    <div class="cols cols-3" style="margin-top:clamp(28px,5vh,56px)">
+      <div class="col rule"><span class="label n">Same exchange</span><p>One platform, one set of listings. Not a Nigerian version and a foreign version.</p></div>
+      <div class="col rule"><span class="label n">Same terms</span><p>A seller in Calabar and a buyer in Texas see the same listing, the same price, the same rules.</p></div>
+      <div class="col rule"><span class="label n">Same access</span><p>Anyone with a phone and a resource, or a need, can walk in the front door.</p></div>
+    </div>
+  </div>
+  <div class="cue"><b>Say</b>This is the point you said is very important. Somebody in the United States should be able to use this as much as somebody here. That is how it is written and how it will be built.</div>
+</section>
+
+<!-- 6 · The UI -->
+<section class="slide" id="s6">
+  <div class="top"><span class="label">The front door, as it is live today</span><span class="label num">06 / 11</span></div>
+  <div class="body">
+    <div class="screens">
+      <div class="frame desk"><img src="/pitch/ui-desktop.jpg" alt="Earth homepage on a laptop" width="1440" height="900" /></div>
+      <div class="frame phone"><img src="/pitch/ui-mobile.jpg" alt="Earth homepage on a phone" width="780" height="1688" /></div>
+    </div>
+    <div class="actions" style="margin-top:20px">
+      <a class="btn solid label" href="/" target="_blank" rel="noopener">Open the live site</a>
+      <a class="btn ghost label" href="/#resources" target="_blank" rel="noopener">See the categories</a>
+    </div>
+  </div>
+  <div class="cue"><b>Say</b>Hand him the phone here. Let him scroll himself. Point out: the name at the top, the six categories, the button that says List a resource. Ask: what do you see, Sir?</div>
+</section>
+
+<!-- 7 · How the exchange works -->
+<section class="slide dark" id="s7">
+  <div class="top"><span class="label">How the exchange works</span><span class="label num">07 / 11</span></div>
+  <div class="body">
+    <h2 class="display">List. Verify. Trade.</h2>
+    <div class="cols cols-3" style="margin-top:clamp(28px,5vh,56px)">
+      <div class="col rule"><span class="label n">01</span><h3 class="display">List</h3><p>A farm, a mine, a mill or a cooperative lists what it has: the product, the origin, the volume.</p></div>
+      <div class="col rule"><span class="label n">02</span><h3 class="display">Verify</h3><p>Quality, quantity and documents are checked before anything moves. Nobody trades with a ghost.</p></div>
+      <div class="col rule"><span class="label n">03</span><h3 class="display">Trade</h3><p>Buyers find the listing, agree terms on the exchange, and the deal is documented end to end.</p></div>
+    </div>
+  </div>
+  <div class="cue"><b>Say</b>Three steps. The seller lists. We verify, so a gold mine on Earth is a real gold mine. Then the buyer finds it and they trade. Verification is what makes people trust it.</div>
+</section>
+
+<!-- 8 · What we heard -->
+<section class="slide" id="s8">
+  <div class="top"><span class="label">What you said, and how we are building</span><span class="label num">08 / 11</span></div>
+  <div class="body">
+    <p class="label kicker">We listened</p>
+    <h2 class="display" style="margin-bottom:clamp(24px,4vh,48px)">Your words, our brief.</h2>
+    <div class="quotes">
+      <div class="rule"><blockquote>“The ratio from idea to success is <em>less than 0%</em>. It is not the best idea that drives.”</blockquote><p class="muted" style="margin-top:14px;font-size:.95rem">So we are not hanging on the idea. We are building, testing and shipping in small pieces you can see.</p></div>
+      <div class="rule"><blockquote>“Your idea is not the biggest thing about a business. It is <em>those who mind your business.</em>”</blockquote><p class="muted" style="margin-top:14px;font-size:.95rem">Execution and discipline over cleverness. Every step gets built once and built right.</p></div>
+      <div class="rule"><blockquote>“We are all in this together, because <em>we are going somewhere.</em>”</blockquote><p class="muted" style="margin-top:14px;font-size:.95rem">Not a band that breaks up after the first hit. One team, one direction, long term.</p></div>
+    </div>
+  </div>
+  <div class="cue"><b>Say</b>I wrote down what you said. The idea is not the biggest thing, minding the business is. I am not here to feed off and branch away. We are going somewhere together. That is why I want your approval before I build the next part.</div>
+</section>
+
+<!-- 9 · Next -->
+<section class="slide dark" id="s9">
+  <div class="top"><span class="label">What comes next</span><span class="label num">09 / 11</span></div>
+  <div class="body">
+    <h2 class="display">The front door is done. The exchange is next.</h2>
+    <div class="cols cols-4" style="margin-top:clamp(28px,5vh,56px)">
+      <div class="col rule"><span class="label n">Now · Done</span><h3 class="display">Front door</h3><p>Name, look, story, categories, global message. Live today.</p></div>
+      <div class="col rule"><span class="label n">Next</span><h3 class="display">Listings</h3><p>Sellers sign up, get verified, and list what they have with photos, origin and volume.</p></div>
+      <div class="col rule"><span class="label n">Then</span><h3 class="display">Finding &amp; enquiry</h3><p>Buyers search by category, country and quantity, and send an enquiry or an offer.</p></div>
+      <div class="col rule"><span class="label n">Later</span><h3 class="display">Payment &amp; contracts</h3><p>Deals closed and documented on the platform once there is real volume.</p></div>
+    </div>
+  </div>
+  <div class="cue"><b>Say</b>I did not start the exchange yet, on purpose. I want you to approve this direction first so we build it once and build it right. The moment you say yes, I start.</div>
+</section>
+
+<!-- 10 · Decisions -->
+<section class="slide" id="s10">
+  <div class="top"><span class="label">Five decisions I need from you, Sir</span><span class="label num">10 / 11</span></div>
+  <div class="body">
+    <h2 class="display" style="margin-bottom:clamp(20px,3vh,40px)">Five decisions, then I build.</h2>
+    <div class="decisions">
+      <div class="dec"><span class="label num muted">01</span><span class="q">Who can list?</span><span class="a"><b>Recommend:</b> anyone can sign up, but a listing goes live only after we verify the seller.</span></div>
+      <div class="dec"><span class="label num muted">02</span><span class="q">Do they negotiate, or pay on the platform?</span><span class="a"><b>Recommend:</b> start with enquiry and negotiation on Earth, add payment once there is volume.</span></div>
+      <div class="dec"><span class="label num muted">03</span><span class="q">Which categories do we launch with?</span><span class="a"><b>Recommend:</b> all six: agriculture, energy, minerals, metals, forestry, raw materials.</span></div>
+      <div class="dec"><span class="label num muted">04</span><span class="q">Naira, dollar, or both?</span><span class="a"><b>Recommend:</b> both, with dollar as the default so Nigeria and the United States see one price.</span></div>
+      <div class="dec"><span class="label num muted">05</span><span class="q">Real email and phone for the site?</span><span class="a">The footer still shows placeholders. Give me the real ones and they go up today.</span></div>
+    </div>
+  </div>
+  <div class="cue"><b>Say</b>I put what I recommend beside each one so you can just say yes or correct me. Write his answers down on the spot. If he skips one, ask it again before you leave.</div>
+</section>
+
+<!-- 11 · Close -->
+<section class="slide dark" id="s11">
+  <div class="top"><span class="label">Earth</span><span class="label num">11 / 11</span></div>
+  <div class="body">
+    <div class="close">
+      <div>
+        <h2 class="display">Have a resource? List it. Need one? Find it.</h2>
+        <p class="lede" style="margin-top:24px">Open it on your own phone, Sir.</p>
+        <a class="url" href="/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px">earth-gamma-ecru.vercel.app</a>
+        <div class="actions" style="margin-top:24px">
+          <a class="btn solid label" href="/" target="_blank" rel="noopener">Open the live site</a>
+        </div>
+      </div>
+      <img class="qr" src="/pitch/qr.svg" alt="QR code linking to the Earth website" width="512" height="512" />
+    </div>
+  </div>
+  <div class="cue"><b>Say</b>Thank you Sir. If you approve the look, I start on the exchange immediately. Let him scan the code or open the link himself so it is on his phone when you leave.</div>
+</section>
+
+<div class="ctl">
+  <button type="button" id="cueBtn" aria-pressed="true">Hide cues</button>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('cueBtn');
+    var key = 'earth-pitch-cues';
+    function apply(hidden) {
+      document.body.classList.toggle('hide-cues', hidden);
+      btn.textContent = hidden ? 'Show cues' : 'Hide cues';
+      btn.setAttribute('aria-pressed', String(!hidden));
+    }
+    var hidden = false;
+    try { hidden = localStorage.getItem(key) === '1'; } catch (e) {}
+    apply(hidden);
+    btn.addEventListener('click', function () {
+      hidden = !hidden; apply(hidden);
+      try { localStorage.setItem(key, hidden ? '1' : '0'); } catch (e) {}
+    });
+    // Keyboard: arrows / space / page keys move one slide.
+    var slides = Array.prototype.slice.call(document.querySelectorAll('section.slide'));
+    function current() {
+      var y = window.scrollY + window.innerHeight / 2;
+      for (var i = 0; i < slides.length; i++) { var s = slides[i]; if (y >= s.offsetTop && y < s.offsetTop + s.offsetHeight) return i; }
+      return 0;
+    }
+    function go(i) { i = Math.max(0, Math.min(slides.length - 1, i)); slides[i].scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    window.addEventListener('keydown', function (e) {
+      if (e.target && /input|textarea/i.test(e.target.tagName)) return;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); go(current() + 1); }
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); go(current() - 1); }
+      else if (e.key === 'Home') { go(0); } else if (e.key === 'End') { go(slides.length - 1); }
+      else if (e.key.toLowerCase() === 'c') { btn.click(); }
+    });
+  })();
+</script>
+</body>
+</html>
